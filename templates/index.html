@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLR Parser</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>SLR Parser</h1>
+        <form method="POST">
+            <label>Parsing Table (JSON format):</label>
+            <textarea name="parsing_table" required>{{ parsing_table_input }}</textarea>
+
+            <label>Grammar Rules (JSON format):</label>
+            <textarea name="grammar_rules" required>{{ grammar_rules_input }}</textarea>
+
+            <label>Input String:</label>
+            <input type="text" name="input_string" value="{{ input_string }}" required>
+
+            <button type="submit">Parse</button>
+        </form>
+
+        {% if result %}
+            <div class="result">
+                <h2>Parsing Result:</h2>
+                <p><strong>Input String:</strong> {{ input_string }}</p>
+                <p><strong>Parsing Table:</strong></p>
+                <pre>{{ parsing_table_input }}</pre>
+                <p><strong>Grammar Rules:</strong></p>
+                <pre>{{ grammar_rules_input }}</pre>
+                <p><strong>Result:</strong> {{ result }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
