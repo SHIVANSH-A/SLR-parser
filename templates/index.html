@@ -10,20 +10,23 @@
     <div class="container">
         <h1>SLR Parser</h1>
         <form method="POST">
-            <label>Parsing Table (JSON format):</label>
-            <textarea name="parsing_table" required>{{ parsing_table_input }}</textarea>
-
-            <label>Grammar Rules (JSON format):</label>
-            <textarea name="grammar_rules" required>{{ grammar_rules_input }}</textarea>
-
-            <label>Input String:</label>
-            <input type="text" name="input_string" value="{{ input_string }}" required>
-
-            <button type="submit">Parse</button>
+            <div class="mb-3">
+                <label class="form-label">Parsing Table (JSON format):</label>
+                <textarea name="parsing_table" class="form-control" rows="5" required>{{ parsing_table_input }}</textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Grammar Rules (JSON format):</label>
+                <textarea name="grammar_rules" class="form-control" rows="5" required>{{ grammar_rules_input }}</textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Input String:</label>
+                <input type="text" name="input_string" class="form-control" value="{{ input_string }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Parse</button>
         </form>
 
         {% if result %}
-            <div class="result">
+            <div class="result mt-4">
                 <h2>Parsing Result:</h2>
                 <p><strong>Input String:</strong> {{ input_string }}</p>
                 <p><strong>Parsing Table:</strong></p>
@@ -34,5 +37,6 @@
             </div>
         {% endif %}
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
