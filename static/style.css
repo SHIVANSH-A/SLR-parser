@@ -1,61 +1,99 @@
 body {
-    background-color: #f8f9fa;
+    background-color: rgb(255, 239, 200);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     padding: 20px;
 }
+
 .container {
-    background: white;
+    background: #fff;
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     max-width: 800px;
     width: 100%;
+    transition: all 0.3s ease-in-out;
+    padding-right: 60px;
 }
+
 h1 {
-    color: #333;
+    color: rgb(215, 6, 84);
     text-align: center;
+    font-size: 24px;
+    font-weight: 600;
 }
+
 textarea, input {
     width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: 1px solid rgb(184, 213, 118);
     font-size: 16px;
     resize: vertical;
+    background: rgb(255, 239, 200);
+    transition: border 0.3s ease;
 }
+
+textarea:focus, input:focus {
+    border-color: rgb(255, 217, 95);
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 217, 95, 0.4);
+}
+
 button {
-    width: 100%;
-    background: #007bff;
+    width: 20%;
+    background: rgb(215, 6, 84);
     color: white;
-    padding: 12px;
+    padding: 14px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease-in-out;
+    font-weight: 500;
 }
+
 button:hover {
-    background: #0056b3;
+    background: rgb(184, 213, 118);
+    color: rgb(215, 6, 84);
 }
+
 .result {
     margin-top: 20px;
-    padding: 15px;
-    background: #e9f7ef;
-    border-left: 5px solid #28a745;
+    padding: 18px;
+    background: rgb(255, 217, 95);
+    border-left: 6px solid rgb(184, 213, 118);
     text-align: left;
     word-wrap: break-word;
     width: 100%;
+    border-radius: 8px;
 }
+
 pre {
-    background: #f8f9fa;
-    padding: 10px;
-    border-radius: 5px;
+    background: rgb(255, 239, 200);
+    padding: 12px;
+    border-radius: 8px;
     white-space: pre-wrap;
     word-wrap: break-word;
     font-size: 14px;
+    color: rgb(215, 6, 84);
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    textarea, input {
+        font-size: 14px;
+    }
+    button {
+        font-size: 14px;
+    }
 }
