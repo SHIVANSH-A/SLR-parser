@@ -34,6 +34,15 @@
                 <p><strong>Grammar Rules:</strong></p>
                 <pre>{{ grammar_rules_input }}</pre>
                 <p><strong>Result:</strong> {{ result }}</p>
+
+                {% if moves %}
+                    <h3>Parsing Steps:</h3>
+                    <ul>
+                        {% for move in moves %}
+                            <li>{{ move }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </div>
         {% endif %}
     </div>
