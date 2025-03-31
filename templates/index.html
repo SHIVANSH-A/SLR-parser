@@ -25,6 +25,12 @@
             <button type="submit" class="btn btn-primary">Parse</button>
         </form>
 
+        {% if error %}
+            <div class="error">
+                <p><strong>Error:</strong> {{ error }}</p>
+            </div>
+        {% endif %}
+
         {% if result %}
             <div class="result mt-4">
                 <h2>Parsing Result:</h2>

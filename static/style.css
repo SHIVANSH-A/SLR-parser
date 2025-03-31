@@ -62,6 +62,12 @@ button:hover {
     color: rgb(215, 6, 84);
 }
 
+.error {
+    color: red;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
 .result {
     margin-top: 20px;
     padding: 18px;
@@ -81,19 +87,4 @@ pre {
     word-wrap: break-word;
     font-size: 14px;
     color: rgb(215, 6, 84);
-}
-
-@media (max-width: 600px) {
-    .container {
-        padding: 20px;
-    }
-    h1 {
-        font-size: 20px;
-    }
-    textarea, input {
-        font-size: 14px;
-    }
-    button {
-        font-size: 14px;
-    }
 }
