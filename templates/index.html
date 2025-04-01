@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SLR Parser</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -43,15 +44,29 @@
 
                 {% if moves %}
                     <h3>Parsing Steps:</h3>
-                    <ul>
-                        {% for move in moves %}
-                            <li>{{ move }}</li>
-                        {% endfor %}
-                    </ul>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Step</th>
+                                <th>Stack</th>
+                                <th>Buffer</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for move in moves %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ move.stack }}</td>
+                                <td>{{ move.buffer }}</td>
+                                <td>{{ move.action if 'action' in move else move.error }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
                 {% endif %}
             </div>
         {% endif %}
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
