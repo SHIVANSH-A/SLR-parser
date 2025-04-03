@@ -39,11 +39,6 @@ The application will start on `http://127.0.0.1:5000/`.
 5. Click the **Parse** button.
 6. View the parsing result and step-by-step parsing process.
 
-### Input String
-```
-a b
-```
-
 ## File Structure
 ```
 slr-parser/
